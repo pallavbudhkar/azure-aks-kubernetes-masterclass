@@ -1,0 +1,43 @@
+apiVersion: # version of Kubernetes API, e.g., v1, apps/v1
+kind:     #type of resource, e.g., Pod, Service, etc.
+metadata: # metadata for the resource, including name and labels
+  name: # name of the resource
+  labels: # labels for the resource, e.g., app: myapp (optional)
+  labels: # additional labels for the resource (optional) 
+  annotations: # annotations for the resource (optional)
+  annotations: # additional annotations for the resource (optional)
+  annotations: # more annotations for the resource (optional)
+  namespace: # namespace for the resource, e.g., default
+spec: #core definition of the resource
+  replicas: # number of replicas for a resource, e.g., 3 for a Deployment
+  selector: # label selector to identify the pods managed by this resource
+    matchLabels: # labels to match for selecting pods
+      app: # label key, e.g., myapp
+  template: # pod template for creating pods
+    metadata: # metadata for the pod template
+      labels: # labels for the pod template, e.g., app: myapp
+    spec: # specification for the pod, including containers and volumes
+      containers: # list of containers in the pod
+        - name: # name of the container, e.g., mycontainer
+          image: # container image, e.g., nginx:latest
+          ports: # ports exposed by the container
+            - containerPort: # port number, e.g., 80
+          env: # environment variables for the container (optional)
+            - name: # environment variable name, e.g., ENV_VAR_NAME
+              value: # environment variable value, e.g., value1
+          resources: # resource requests and limits for the container (optional)
+            requests: # resource requests, e.g., CPU and memory
+              cpu: # CPU request, e.g., "100m"
+              memory: # memory request, e.g., "128Mi"
+            limits: # resource limits, e.g., CPU and memory
+              cpu: # CPU limit, e.g., "200m"    
+    
+
+    
+# Types of Kubernetes Objects
+# Pod, ReplicaSet, Deployment, Service and many more
+
+# apiVersion: version of k8s objects
+# kind: k8s objects 
+# metadata: define name and labels for k8s objects
+# spec: specification or real definition for k8s objects
